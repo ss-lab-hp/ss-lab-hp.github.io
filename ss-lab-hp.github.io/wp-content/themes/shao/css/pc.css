@@ -1,0 +1,962 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    font-family: "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", 'Noto Sans JP', 'Roboto', 游ゴシック体, "Yu Gothic", YuGothic, メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", Verdana, sans-serif;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #5a4f4a;
+    background: #ffffff;
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
+
+.ki {
+    color: #dfd200;
+}
+
+.wp-block-embed iframe {
+    width: 100%;
+    height: 675px;
+}
+
+
+ul.icon {
+    padding-left: 0em !important;
+}
+
+ul.icon li {
+    list-style: none;
+}
+
+ul.icon li:before {
+    content: '\f138';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+#link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.century {
+    font-family: Century;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.alignright {
+    display: block;
+    margin: 0 0 0 auto !important;
+}
+
+.alignleft {
+    display: block;
+    margin: 0 auto 0 0 !important;
+}
+
+.post-password-form {
+    margin-top: 30px;
+}
+
+.thumb-left {
+    float: left;
+    margin-right: 30px;
+}
+
+#main article .thumb-left img {
+    float: left;
+    margin-bottom: 5px;
+
+}
+
+.blog {
+    overflow: hidden;
+}
+
+.post-date {
+    overflow: hidden;
+}
+
+input[type="password"] {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 3px;
+    border-color: #bbbbbb;
+    width: 150px;
+    height: auto;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+}
+
+#pr {
+    position: relative;
+}
+
+#toparea {
+    width: 100%;
+    height: 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #022132;
+    box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0px 9px 3px -3px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    border-top: 3px solid #022132;
+}
+
+#topareatop {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#title {
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+#title h1 {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#title h1.sm {
+    display: none;
+}
+
+#title img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+#univ {
+    position: absolute;
+    top: 3px;
+    right: 25px;
+}
+
+#univ i {
+    margin-right: 0px;
+    color: #ffffff;
+}
+
+#univ a {
+    background: #022132;
+    color: #ffffff;
+    padding: 5px;
+    text-decoration: none;
+}
+
+#univ a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#language {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    z-index: 2;
+}
+
+#language img {
+    width: 100%;
+    height: auto;
+}
+
+#drawernav {
+    width: 100%;
+    height: auto;
+}
+
+#menuarea {
+    width: 100%;
+    height: 50px;
+    background: #044164;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#menuarea nav {
+    max-width: 1050px;
+    height: auto;
+    margin: 0 auto;
+    background: #022132;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+
+#mainnavigation {
+    padding-left: 0;
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+
+#mainnavigation li {
+    list-style: none;
+    text-align: center;
+}
+
+#mainnavigation li a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 15px;
+}
+
+#mainnavigation li a:hover {
+    color: #ccc32c;
+}
+
+#mainnavigation li.current-menu-item a {
+    color: #ccc32c;
+}
+
+/* サブメニューをabsoluteにするため、親メニューをrelativeに */
+.menu-item-has-children {
+    position: relative;
+}
+
+/* 親メニューにマウスオーバーしたときにカーソルを変更 */
+.menu-item-has-children:hover {
+    cursor: pointer;
+}
+
+/* 子を持つ親メニューにマウスオーバーしたときサブメニューを表示 */
+.menu-item-has-children:hover .sub-menu {
+    display: block;
+}
+
+/* サブメニューをabsoluteにして親メニューの下に配置。スタイルは適宜調整してください */
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    background: #001122;
+    padding: 0;
+}
+
+
+nav.menu-mainnavigation2-container .sub-menu {
+    display: none;
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    background: #001122;
+    padding: 0;
+}
+
+/* サブメニューの境目をわかりやすくするため、一番下の項目以外下線を引いた */
+.sub-menu > .menu-item:not(:last-child) {
+    border-bottom: 1px dotted #ffffff;
+}
+
+/* サブニューのリンクタグをmenu-itemの大きさと合わせ、クリックしやすいようにした */
+.sub-menu > .menu-item a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: .5em 0;
+}
+
+/* サブメニューにマウスオーバーしたときリンクの背景色とテキストカラーを変更 */
+.sub-menu > .menu-item a:hover {
+    color: #ccc32c;
+    background: #112233;
+}
+
+
+
+#humberger {
+    display: none;
+}
+
+.visualarea {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.visualarea img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.mainvisualwide {
+    width: 100%;
+    height: auto;
+}
+
+.mainvisualwide img {
+    width: 100%;
+    height: auto;
+}
+
+#midashi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 700px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#main {
+    overflow: hidden;
+    max-width: 1050px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#mainall {
+    overflow: hidden;
+    max-width: 1050px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+#main article {
+    width: 95%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#main aside {
+    width: 0%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+#main article.top {
+    width: 68%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#main aside.top {
+    width: 22%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#main aside #side {
+    width: 100%;
+    height: auto;
+}
+
+#main article img {
+    max-width: 100%;
+    height: auto;
+}
+
+.slick-cat {
+    color: #5a4f4a;
+    text-decoration: underline;
+}
+
+#main article #information {
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+}
+
+#main article #information li {
+    margin-right: 1em;
+}
+
+#main .carouselu a {
+    color: #5a4f4a;
+}
+
+#main article #research img {
+    width: 40%;
+    height: auto;
+    margin-left: 30%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+#main article #research img.large {
+    width: 60%;
+    height: auto;
+    margin-left: 20%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+#main article figure {
+    margin-bottom: 0px;
+}
+
+#main article figure .two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+#main article figcaption {
+    text-align: center;
+}
+
+#main article .right {
+    text-align: right;
+}
+
+#p404 article {
+    width: 95%;
+    height: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+#main aside #side {
+    width: 100%;
+    height: auto;
+}
+
+#main article p {
+    margin-bottom: 15px;
+}
+
+#main article #equipment p {
+    margin-bottom: 5px;
+}
+
+p.about {
+    background: #ffffff;
+    color: #5a4f4a;
+    font-weight: bold;
+    padding: 15px 30px;
+    line-height: 2.0
+}
+
+#main article #equipment {
+    font-family: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 Pr6 W6", "Hiragino Mincho Pro", "HGS明朝E", "メイリオ", "ＭＳ Ｐ明朝", "MS PMincho", Meiryo, serif;
+    font-size: 16px;
+}
+
+#main article table {
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    border: 1px solid #022132;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+#main article table tr:nth-child(odd) {
+    background: #ebeff3;
+}
+
+#main article table td:first-child {
+    width: 10%;
+    height: auto;
+}
+
+#main article table td[rowspan] {
+    background: #ffffff;
+    width: 10%;
+}
+
+#main article table.w30 td:first-child {
+    width: 23%;
+    height: auto;
+    text-align: left;
+}
+
+#main article table th,
+td {
+    border: 1px solid #022132;
+    padding: 0.5em;
+}
+
+#main ul,
+#main ol {
+    padding-left: 1.5em;
+    margin-bottom: 15px;
+}
+
+#main ol {
+    padding-left: 2em;
+}
+
+#main ul.list {
+    padding-left: 0px;
+    margin-bottom: 30px;
+}
+
+#main ul.list li {
+    list-style: none;
+    border-bottom: 1px dotted #999;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+#main ul.list li:first-child {
+    border-top: 1px dotted #999;
+}
+
+#main .two {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+#main .two .twoleft {
+    width: 15%;
+    height: auto;
+    margin-right: 2.5%;
+}
+
+#main .two .tworight {
+    width: 82.5%;
+    height: auto;
+}
+
+
+#main #member {
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%;
+    height: auto;
+}
+
+#main #member dl {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+#main #member li {
+    list-style: none;
+    border-bottom: 1px dotted #999;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+#main #member li:first-child {
+    border-top: 1px dotted #999;
+}
+
+#main #member li dt:nth-child(1) {
+    width: 285px;
+    height: auto;
+    text-align: left;
+    margin-right: 15px;
+}
+
+#main #member li dd:nth-child(2) {
+    width: 285px;
+    height: auto;
+    font-weight: bold;
+    text-align: left;
+    margin-right: 15px;
+}
+
+#main #member li dt:nth-child(3) {
+    width: 425px;
+    height: auto;
+    text-align: left;
+    margin-right: 15px;
+}
+
+#main #member li dt:nth-child(4) {
+    width: 100px;
+    height: auto;
+    text-align: left;
+}
+
+#main #member li dt {
+    text-align: left;
+}
+
+#main #member dl.student li dd {
+    text-align: left;
+}
+
+#main li a {
+    text-decoration: none;
+    color: #4169e1;
+}
+
+#main li a:hover {
+    text-decoration: underline;
+    color: #00a3db;
+}
+
+#main ul li p {
+    margin-bottom: 15px;
+}
+
+#main a {
+    text-decoration: none;
+    color: #4169e1;
+}
+
+#main a:hover {
+    text-decoration: underline;
+    color: #00a3db;
+}
+
+#main article p.under {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#main article #map {
+    width: 100%;
+    height: auto;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#main article #map iframe {
+    width: 100%;
+    height: 350px;
+}
+
+#main article #campusmap {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#main article #campusmap img {
+    width: 45%;
+    height: 100%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+
+address {
+    font-size: 16px;
+    font-style: normal;
+}
+
+p.large {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#banner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+#banner a img {
+    padding: 15px;
+}
+
+h2 {
+    font-weight: bold;
+    color: #022132;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 0.7em;
+    border-left: 7px solid #022132;
+    text-align: left;
+}
+
+h3 {
+    font-weight: bold;
+    color: #022132;
+    font-size: 26px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: left;
+    position: relative;
+    padding: 0.25em 0;
+}
+
+h3:after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(2, 33, 50, 1)), to(rgba(2, 33, 50, 0)));
+    background: linear-gradient(to right, rgba(2, 33, 50, 1), rgba(2, 33, 50, 0));
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #022132;
+}
+
+h4#abstract {
+    font-size: 16px;
+    text-align: justify;
+}
+
+h5 {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.br-sp {
+    display: none;
+}
+
+.bdr01 {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    border-top: solid 1px #022132;
+    position: relative;
+}
+
+.bdr01:after {
+    content: "";
+    border-top: solid 0px #022132;
+    position: absolute;
+    top: 1px;
+    left: -50%;
+    width: 150%;
+}
+
+footer {
+    margin-top: 80px;
+}
+
+
+.lar {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.huge {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.mid1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mid2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#footerarea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+    height: auto;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+#footerleft {
+    width: 62%;
+    height: auto;
+}
+
+#footerright {
+    width: 38%;
+    height: auto;
+}
+
+#footerright iframe {
+    width: 100%;
+    height: 260px;
+}
+
+footer address {
+    font-style: normal;
+    text-align: left;
+}
+
+footer address #flogo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+footer address #flogo img {
+    margin-right: 15px;
+}
+
+footer address.en {
+    margin-top: 30px;
+}
+
+footer address.tw {
+    margin-top: 15px;
+}
+
+#copy {
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    background: #022132;
+    color: #ffffff;
+}
+
+#gototop {
+    position: fixed;
+    bottom: 3px;
+    right: 10px;
+}
+
+#gototop img {
+    width: 50px;
+    height: 50px;
+}
