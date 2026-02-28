@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gallery | Smart System Laboratory</title>
+<link href="../../css/style.css" rel="noopener noreferrer stylesheet"/>
+<style>
+    .gallery-year { margin-bottom: 48px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 14px; }
+    .gallery-item { cursor: pointer; border-radius: 6px; overflow: hidden; background: var(--light); box-shadow: 0 1px 4px rgba(0,0,0,.08); transition: transform .15s, box-shadow .15s; }
+    .gallery-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.14); }
+    .gallery-item img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .gallery-item .cap { padding: 8px 10px 10px; }
+    .gallery-item .cap .ttl { font-size: 13px; font-weight: 600; color: var(--navy); }
+    .gallery-item .cap .dt { font-size: 11px; color: var(--gray); font-family: var(--font-en); }
+    .gallery-item .cap .dsc { font-size: 12px; color: #4b5563; margin-top: 4px; line-height: 1.5; }
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88); z-index: 1000; align-items: center; justify-content: center; flex-direction: column; padding: 24px; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: min(90vw,900px); max-height: 72vh; object-fit: contain; border-radius: 4px; }
+    #lightbox .lb-info { color: white; text-align: center; margin-top: 14px; }
+    #lightbox .lb-info .lb-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; font-family: var(--font-en); }
+    #lightbox .lb-info .lb-cap { font-size: 13px; color: rgba(255,255,255,.75); font-family: var(--font-en); }
+    #lightbox .lb-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: white; font-size: 32px; cursor: pointer; opacity: .8; line-height: 1; }
+    #lightbox .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,.15); border: none; color: white; font-size: 26px; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+    #lightbox .lb-nav:hover { background: rgba(255,255,255,.3); }
+    #lightbox .lb-prev { left: 16px; }
+    #lightbox .lb-next { right: 16px; }
+    .no-photos { color: var(--gray); font-size: 13px; padding: 20px 0; }
+  </style>
+<meta content="Photo gallery of the Smart System Laboratory." name="description"/><meta content="website" property="og:type"/><meta content="Smart System Laboratory" property="og:site_name"/><meta content="Gallery | Smart System Laboratory" property="og:title"/><meta content="Smart System Laboratory (Toyohashi University of Technology). Research on edge computing, networking, and smart systems." property="og:description"/><meta content="/images/ogp.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Gallery | Smart System Laboratory" name="twitter:title"/><meta content="Smart System Laboratory (Toyohashi University of Technology). Research on edge computing, networking, and smart systems." name="twitter:description"/><meta content="/images/ogp.png" name="twitter:image"/><link href="/images/ogp.png" rel="icon noopener noreferrer" type="image/png"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Smart System Laboratory", "alternateName": "スマートシステム研究室", "url": "", "logo": "/images/ogp.png", "parentOrganization": {"@type": "CollegeOrUniversity", "name": "Toyohashi University of Technology", "alternateName": "豊橋技術科学大学"}}</script></head>
+<body>
+<div class="site-wrapper">
+<div id="site-header"></div>
+<main>
+<div class="container">
+<div class="page-heading"><h1>Gallery</h1><p class="lead">Snapshots from our research, events, and daily life in the laboratory.</p></div>
+<div id="gallery-container"></div>
+</div>
+</main>
+<div id="lightbox">
+<button class="lb-close" id="lb-close">×</button>
+<button class="lb-nav lb-prev" id="lb-prev">‹</button>
+<img alt="" id="lb-img" src=""/>
+<div class="lb-info">
+<div class="lb-title" id="lb-title"></div>
+<div class="lb-cap" id="lb-cap"></div>
+</div>
+<button class="lb-nav lb-next" id="lb-next">›</button>
+</div>
+<div id="site-footer"></div>
+</div>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () =>
+    document.getElementById('mobile-nav').classList.toggle('open'));
+
+  let allItems = [], currentIndex = 0;
+
+  async function loadGallery() {
+    const container = document.getElementById('gallery-container');
+    try {
+      const res = await fetch('/gallery-data.json');
+      const items = await res.json();
+      allItems = items;
+      if (!items.length) { container.innerHTML = '<p class="no-photos">No photos yet.</p>'; return; }
+
+      const byYear = {};
+      items.forEach((item, i) => {
+        item._i = i;
+        const y = item.year || 'Other';
+        if (!byYear[y]) byYear[y] = [];
+        byYear[y].push(item);
+      });
+
+      Object.keys(byYear).sort((a,b) => b-a).forEach(year => {
+        const sec = document.createElement('div');
+        sec.className = 'gallery-year';
+        sec.innerHTML = `<h2 class="section-title">${year}</h2>`;
+        const grid = document.createElement('div');
+        grid.className = 'gallery-grid';
+        byYear[year].forEach(item => {
+          const d = document.createElement('div');
+          d.className = 'gallery-item';
+          d.innerHTML = `
+            <img src="/${item.file}" alt="${item.title||''}" loading="lazy"
+                 onerror="this.closest('.gallery-item').style.display='none'">
+            <div class="cap">
+              <div class="ttl">${item.title||''}</div>
+              <div class="dt">${item.date||''}</div>
+              ${item.caption ? `<div class="dsc">${item.caption}</div>` : ''}
+            </div>`;
+          d.addEventListener('click', () => openLB(item._i));
+          grid.appendChild(d);
+        });
+        sec.appendChild(grid);
+        container.appendChild(sec);
+      });
+    } catch(e) {
+      container.innerHTML = '<p class="no-photos">Could not load gallery data.</p>';
+    }
+  }
+
+  function openLB(i) { currentIndex=i; updateLB(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLB() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+  function updateLB() {
+    const item = allItems[currentIndex];
+    document.getElementById('lb-img').src = '/' + item.file;
+    document.getElementById('lb-title').textContent = item.title||'';
+    document.getElementById('lb-cap').textContent = [item.date, item.caption].filter(Boolean).join('  ');
+  }
+
+  document.getElementById('lb-close').addEventListener('click', closeLB);
+  document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id==='lightbox') closeLB(); });
+  document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); currentIndex=(currentIndex-1+allItems.length)%allItems.length; updateLB(); });
+  document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); currentIndex=(currentIndex+1)%allItems.length; updateLB(); });
+  document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key==='Escape') closeLB();
+    if (e.key==='ArrowLeft') { currentIndex=(currentIndex-1+allItems.length)%allItems.length; updateLB(); }
+    if (e.key==='ArrowRight') { currentIndex=(currentIndex+1)%allItems.length; updateLB(); }
+  });
+
+  loadGallery();
+</script>
+  <script src="/js/site-config.js" defer></script>
+  <script src="/js/seo-runtime.js" defer></script>
+  <script src="/js/site-render.js" defer></script>
+</body>
+</html>
