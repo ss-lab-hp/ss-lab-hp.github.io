@@ -38,13 +38,13 @@ window.SS_SITE_CONFIG = {
     leftJa:  "豊橋技術科学大学<br>電気・電気情報工学系",
     leftEn:  "Department of Electrical and Electronic Information Engineering<br>Toyohashi University of Technology",
     rightJa: "スマートシステム研究室",
-    rightEn: "Smart System Laboratory",
+    rightEn: "Smart Systems Laboratory",
   },
 
   title: {
     jaMain: "スマートシステム研究室",
     jaSub:  "豊橋技術科学大学",
-    enMain: "Smart System Laboratory",
+    enMain: "Smart Systems Laboratory",
     enSub:  "Toyohashi University of Technology",
   },
 
@@ -52,13 +52,13 @@ window.SS_SITE_CONFIG = {
     ja: [
       "豊橋技術科学大学 電気・電気情報工学系 情報通信システムコース",
       "スマートシステム研究室 〒441-8580 愛知県豊橋市天伯町雲雀ヶ丘1-1 C-410",
-      "Copyright © Smart System Laboratory",
+      "Copyright © Smart Systems Laboratory",
     ],
     en: [
-      "Smart System Laboratory",
+      "Smart Systems Laboratory",
       "Department of Electrical and Electronic Information Engineering, Toyohashi University of Technology",
       "C-410, 1-1 Hibari Gaoka, Tempaku-cho, Toyohashi-shi, Aichi 441-8580, Japan",
-      "Copyright © Smart System Laboratory",
+      "Copyright © Smart Systems Laboratory",
     ],
   },
 };
