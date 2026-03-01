@@ -54,4 +54,22 @@
   <url>
     <loc>https://YOUR-DOMAIN.example/research/</loc>
   </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/news/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/students/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/cv/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/en/news/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/en/students/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-DOMAIN.example/en/cv/</loc>
+  </url>
 </urlset>

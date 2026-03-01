@@ -12,9 +12,12 @@ window.SS_SITE_CONFIG = {
   nav: {
     ja: [
       { label: "ホーム",     href: "/"                      },
+      { label: "お知らせ",   href: "/news/"                 },
       { label: "研究内容",   href: "/research/"             },
       { label: "メンバー",   href: "/people/"               },
+      { label: "学生ページ", href: "/students/"             },
       { label: "研究業績",   href: "/publications/"         },
+      { label: "CV",         href: "/cv/"                   },
       { label: "ギャラリー", href: "/gallery/"              },
       { label: "募集",       href: "/joinus/"               },
       { label: "連絡先",     href: "/access/"               },
@@ -23,9 +26,12 @@ window.SS_SITE_CONFIG = {
     ],
     en: [
       { label: "Home",         href: "/en/"                      },
+      { label: "News",         href: "/en/news/"                 },
       { label: "Research",     href: "/en/research/"             },
       { label: "People",       href: "/en/people/"               },
+      { label: "Students",     href: "/en/students/"             },
       { label: "Publications", href: "/en/publications/"         },
+      { label: "CV",           href: "/en/cv/"                   },
       { label: "Gallery",      href: "/en/gallery/"              },
       { label: "Join us",      href: "/en/joinus/"               },
       { label: "Contact",      href: "/en/access/"               },
